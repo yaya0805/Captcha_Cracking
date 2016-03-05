@@ -33,10 +33,12 @@ nine_std=resize30(nine_std);
 %% Start
 pic_new=preprocess(pic);
 L=bwlabel(pic_new,4);
-[ele1 ele2 ele3 ele4]=cut(L,pic,0);
+[ele1 ele2 ele3 ele4 ele5 ele6]=cut(L,pic,0);
 ele1(ele1>0)=1;
 ele2(ele2>0)=1;
 ele3(ele3>0)=1;
 ele4(ele4>0)=1;
-[ans1 ans2 ans3 ans4]=findAns(ele1,ele2,ele3,ele4,zero_std,one_std,two_std,three_std,four_std,five_std,six_std,seven_std,eight_std,nine_std);
-out=[ans1 ans2 ans3 ans4];
+ele5(ele5>0)=1;
+ele6(ele6>0)=1;
+[ans1 ans2 ans3 ans4 ans5 ans6]=findAns(ele1,ele2,ele3,ele4,ele5,ele6,zero_std,one_std,two_std,three_std,four_std,five_std,six_std,seven_std,eight_std,nine_std);
+out=[ans1 ans2 ans3 ans4 ans5 ans6];
